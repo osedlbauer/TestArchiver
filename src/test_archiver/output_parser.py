@@ -118,8 +118,10 @@ class RobotFrameworkOutputParser(XmlOutputParser):
             critical = attrs.getValue('critical') == 'yes' if 'critical' in attrs.getNames() else None
             if 'starttime' in attrs.getNames():
                 starttime = attrs.getValue('starttime')
-            else:
+            elif 'start' in attrs.getNames():
                 starttime = attrs.getValue('start')
+            else:
+                starttime= None
             elapsed = None
             if 'elapsed' in attrs.getNames():
                 elapsed = self._normalize_elapsed(attrs.getValue('elapsed'))
