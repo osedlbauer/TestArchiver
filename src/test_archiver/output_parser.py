@@ -100,8 +100,9 @@ class RobotFrameworkOutputParser(XmlOutputParser):
         elif name == 'continue':
             self.archiver.begin_keyword('CONTINUE', '', 'CONTINUE')
         elif name == 'var':
-            if 'name' in attrs.getNames():
-                self.archiver.update_arguments(attrs.getValue('name'))
+            pass
+        elif name == 'variable':
+            pass
         elif name == 'value':
             pass
         elif name == 'arg':
@@ -189,7 +190,9 @@ class RobotFrameworkOutputParser(XmlOutputParser):
         elif name == 'assign':
             pass
         elif name == 'var':
-            self.archiver.update_arguments(self.content())
+            pass
+        elif name == 'variable':
+            pass
         elif name == 'value':
             self.archiver.update_arguments(self.content())
         elif name == 'timeout':
